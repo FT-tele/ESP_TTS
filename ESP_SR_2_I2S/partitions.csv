@@ -1,0 +1,11 @@
+# Name,   Type, SubType, Offset,   Size, Flags
+nvs,      data, nvs,     0x9000,   0x5000,
+otadata,  data, ota,     0xE000,   0x2000,
+# APP 主程序分区 (减小至 7MB)
+factory,  app,  factory, 0x10000,  0x700000,
+# MultiNet 模型分区 (增加至 4MB) - 起始地址前移
+model,    data, 0x40,    0x710000, 0x400000,
+# TTS 语音数据分区 (保持 4MB) - 回到你熟悉的地址
+voice_data, data, fat,   0xB10000, 0x400000,
+# 存储分区 (剩余约 1MB)
+storage,  data, spiffs,  0xF10000, 0xF0000,
